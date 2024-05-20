@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        /*
+//可能需要重新生成编译命令，但是可能会耗时过长，所以注释掉了
+
+        {
+            "label": "reCompile",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/GEOS/scripts/config-build.py",
+                "-hc",
+                "${workspaceFolder}/GEOS/host-configs/wsl-ubuntu.cmake",
+                "-bt",
+                "Debug"
+            ]
+
+        },*/
+        //need a directory to declair where command run.
+        {
+            "label": "reInstall",
+            "type": "shell",
+            "command": "make",
+            "args": ["install","-C","${workspaceFolder}/GEOS/build-wsl-ubuntu-debug/"],
+            "dependsOn":["reMake"]
+        },
+        {
+            "label": "reMake",
+            "type": "shell",
+            "command": "make",
+            "args": ["-j32","-C","${workspaceFolder}/GEOS/build-wsl-ubuntu-debug/"],
+        },
+
+    ]
+}
