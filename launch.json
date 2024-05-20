@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/GEOS/install-wsl-ubuntu-debug/bin/geos",
             "args": ["-i","${workspaceFolder}/SPE10/deadOilSpe10Layers84_85_benchmark.xml","-o" , "${workspaceFolder}/SPE10/"],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            //"preLaunchTask": "build"
+            "preLaunchTask":"reInstall"
         }
     ]
 }
